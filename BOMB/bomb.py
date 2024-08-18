@@ -4,7 +4,7 @@ import socket
 import threading
 import subprocess
 from os import system 
-# PLEASE RUN `os.system('pip install pywin32')` to have this work properly 
+os.system('pip install pywin32')` # this is really a one time use software... so the script will auto install this to work properly 
 from win32file import * 
 from win32ui import * 
 from win32con import * 
