@@ -1,5 +1,5 @@
 # What is this?
-idk, **rat** a remote access trojan? idk XD
+idk, **rat** a remote access tool? idk XD
 (honestly, idk what this is classified as)
 
 ---
