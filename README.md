@@ -43,10 +43,6 @@ On your phone using Termux, you can use `nc` (Netcat) to interact with the scrip
   echo "upload your_file_name.exe" | nc {PC_IP_ADDRESS} 9999
   cat your_file_name.exe | nc {PC_IP_ADDRESS} 9999
   ```
----
-
-# BOMB/bomb.py
-(this is an example on how you can make a "remote bomb" out of this script lol)
 
 * **Execute the uploaded file:**
   ```
@@ -54,3 +50,10 @@ On your phone using Termux, you can use `nc` (Netcat) to interact with the scrip
   ```
 
 > NOTE: Replace `your_file_name.exe` with the file you want to upload and `{PC_IP_ADDRESS}` with the IP address of your Windows PC.
+
+
+---
+
+# BOMB/bomb.py
+(this is an example on how you can make a "remote bomb" out of this script lol)
+
