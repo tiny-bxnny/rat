@@ -1,4 +1,10 @@
-# bomb-v1
+# What is this?
+idk, **rat** a remote access trojan? idk XD
+(honestly, idk what this is classified as)
+
+---
+
+## rat-v1
 Description - This is a simple easily editable python script that uses remote execution like a remote bomb to execute commands!
 
 ### How to use
@@ -17,7 +23,7 @@ On your phone using Termux, you can use `nc` (Netcat) to interact with the scrip
 ---
 
 
-# bomb-v2
+## rat-v2
 Description - This is the same as `bomb-v1` but you can now upload a file from your phone to your pc
 
 ### How to use
@@ -37,6 +43,10 @@ On your phone using Termux, you can use `nc` (Netcat) to interact with the scrip
   echo "upload your_file_name.exe" | nc {PC_IP_ADDRESS} 9999
   cat your_file_name.exe | nc {PC_IP_ADDRESS} 9999
   ```
+---
+
+# BOMB/bomb.py
+(this is an example on how you can make a "remote bomb" out of this script lol)
 
 * **Execute the uploaded file:**
   ```
