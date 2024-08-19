@@ -42,7 +42,7 @@ def main():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind(('0.0.0.0', 9999))
     server.listen(5)
-    print('Listening on port 9999...')
+    print('Listening on port 9999')
     
     while True:
         client_socket, addr = server.accept()
