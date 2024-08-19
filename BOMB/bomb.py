@@ -6,7 +6,7 @@ from os import system
 # os.system('pip install tkinter') | install `tkinter`, but its a built-in Python module. it doesn't need to be installed using `pip`. In fact, trying to install it using `pip` will likely fail. But its here just incase
 # os.system('pip install ctypes') | is also a built-in Python module, so it doesn't need to be installed using `pip`. But is here just incase
 os.system('pip install pywin32')` # is a Windows-specific package and is required for this script to work.
-# the line above requires root to be executed, and so does a lot of the rest of this script, so please be sure to run this script as administrator
+# the line above requires root to be executed, and so does a lot of the rest of this script, so please be sure to run this script with administrator
 import time
 import socket
 import ctypes
