@@ -18,13 +18,12 @@ The script defines several functions:
 * gods_wrath(): Displays a warning message using win32gui and then calls the unclosable() and mbr() functions.
 * handle_client(client_socket): Handles incoming connections from a client. It receives commands from the client and executes them.
 * main(): Creates a socket server that listens for incoming connections on port 9999.
-Server functionality
 
----
+**Server functionality:**
 
 The script creates a socket server that listens for incoming connections on port 9999. When a client connects, it creates a new thread to handle the client connection. The handle_client() function receives commands from the client and executes them.
 
-The script supports two commands:
+**The script supports two commands:**
 
 * ping: The server responds with a countdown from 10 to 1, and then executes the gods_wrath() function, which displays a warning message and overwrites the MBR.
 * exit: The server closes the connection.
