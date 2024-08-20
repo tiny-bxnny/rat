@@ -1,6 +1,8 @@
-# IT IS RECOMMENDED TO RUN THIS CODE WITH ADMINISTRATOR(root)
-# (made for windows)
+# note: uhh, this was fun lol
 
+# MADE FOR WINDOWS
+# PLEASE EXECUTE THIS CODE WITH ADMINISTRATOR!
+# MAKE SURE TO CHECK PORT: 9999 DOESN'T GET BLOCKED BY THE USERS FIREWALL!
 import os 
 from os import system 
 # os.system('pip install tkinter') | install `tkinter`, but its a built-in Python module. it doesn't need to be installed using `pip`. In fact, trying to install it using `pip` will likely fail. But its here just incase
