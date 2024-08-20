@@ -25,14 +25,10 @@ from sys import exit
 # |Working on this?| trying to download pywin32 without root|
 # import subprocess
 # try:
-#     import tkinter as tk
-#     import ctypes
 #     import pywin32
 # except ImportError:
-#     print("Installing required packages...")
+#     print("this message is not required")
 #     subprocess.run(['pip', 'install', 'pywin32'])
-#     import tkinter as tk
-#     import ctypes
 #     import pywin32
 #
 
