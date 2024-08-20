@@ -54,7 +54,7 @@ On your phone using Termux, you can use `nc` (Netcat) to interact with the scrip
 
 ---
 
-# BOMB/bomb.py
+# src/bomb.py
 (this is an example on how you can make a "remote bomb" out of this script lol)
 
 * this will destroy a pc(not literaly) if executed properly
